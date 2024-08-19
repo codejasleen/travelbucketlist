@@ -1,0 +1,229 @@
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    perspective: 1000px;
+    /* Adds perspective for 3D effects */
+}
+
+/* Header Styles */
+header {
+    background-color: #ffffff;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: rotateX(5deg);
+    /* 3D effect for header */
+    transition: transform 0.3s ease-in-out;
+}
+
+header:hover {
+    transform: rotateX(0deg);
+    /* Smooth transition effect */
+}
+
+/* Navigation Styles */
+nav a {
+    color: #007bff;
+    margin: 0 1em;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #0056b3;
+    transform: translateY(-3px) scale(1.05);
+    /* Subtle hover effect */
+}
+
+/* Main Content Styles */
+main {
+    padding: 2em;
+    background: linear-gradient(145deg, #ffffff, #e9ecef);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+    /* Animation for floating effect */
+}
+
+/* Floating Animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ffffff;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    transform: rotateX(-5deg);
+    /* 3D effect for footer */
+    transition: transform 0.3s ease-in-out;
+}
+
+footer:hover {
+    transform: rotateX(0deg);
+    /* Smooth transition effect */
+}
+
+/* Headings */
+h1,
+h2 {
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+    /* Shadow for readability */
+}
+
+/* Input and Textarea Styles */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    color: #333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+button,
+a.button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    /* Remove underline from anchor tags */
+}
+
+/* Icon Styles */
+button i,
+a.button i {
+    font-size: 1.2em;
+    /* Adjust icon size */
+    margin-right: 0.5em;
+    /* Space between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Gradient Background Animation */
+button::before,
+a.button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 20%, rgba(0, 123, 255, 0) 60%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+button:hover::before,
+a.button:hover::before {
+    opacity: 1;
+}
+
+button:hover,
+a.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1) rotate(2deg);
+    /* Slightly rotate for added effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Larger shadow on hover */
+    animation: gradientPulse 1.5s infinite;
+    /* Pulsing gradient background */
+}
+
+/* Gradient Pulse Animation */
+@keyframes gradientPulse {
+    0% {
+        background-color: #007bff;
+    }
+
+    50% {
+        background-color: #0056b3;
+    }
+
+    100% {
+        background-color: #007bff;
+    }
+}
+
+/* Icon Animations */
+button:hover i,
+a.button:hover i {
+    color: #ffffff;
+    /* Change icon color on hover */
+    transform: scale(1.3) rotate(20deg);
+    /* Scale and rotate effect */
+    animation: iconBounce 0.6s ease-in-out;
+    /* Bounce animation */
+}
+
+/* Icon Bounce Animation */
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: scale(1.3) rotate(20deg);
+    }
+
+    50% {
+        transform: scale(1.4) rotate(20deg) translateY(-10px);
+        /* Bounce effect */
+    }
+}
+
+/* Active State for Buttons */
+button:active,
+a.button:active {
+    transform: scale(0.95);
+    /* Slightly decrease button size when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow returns to normal */
+    background-color: #003d7a;
+    /* Darker color for active state */
+}
+
+/* Focus State for Buttons */
+button:focus,
+a.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    /* Focus ring effect */
+}
